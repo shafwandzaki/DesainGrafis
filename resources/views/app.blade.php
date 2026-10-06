@@ -6,7 +6,7 @@
     <title>Desain Grafis</title>
     @vite('resources/css/app.css', 'resources/js/app.js')
 </head>
-<body>
+<body class="custom-scrollbar text-white">
     <x-bg-utama></x-bg-utama>
 
     <x-navbar></x-navbar>
