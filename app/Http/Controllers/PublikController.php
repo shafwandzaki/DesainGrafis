@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class UtamaController extends Controller
+class PublikController extends Controller
 {
     //
 }

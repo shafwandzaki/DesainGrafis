@@ -9,7 +9,7 @@ use App\Http\Controllers\admin\DesainController;
 use App\Http\Controllers\admin\ToolsController;
 use App\Http\Controllers\admin\KaryaController;
 
-Route::get('/', [DataController::class, 'app']);
+Route::get('/', [PublikController::class, 'app']);
 
 // // Route login (TIDAK di-protect, biar bisa diakses buat login)
 // Route::get('admin/login', [AuthController::class, 'login'])->name('admin.login');
