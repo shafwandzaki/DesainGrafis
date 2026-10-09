@@ -7,6 +7,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="custom-scrollbar bg-[#131315] text-white h-screen flex overflow-hidden">
+    <x-bg-admin></x-bg-admin>
     <x-sidebar></x-sidebar>
     <main class="flex-1 p-10 pt-20 md:p-12 overflow-y-auto h-full w-full">
         {{-- Notifikasi sukses --}}

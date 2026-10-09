@@ -1,6 +1,6 @@
 {{-- Variabel: $action, $item (null saat create) --}}
 <form action="{{ $action }}" method="POST" enctype="multipart/form-data"
-      class="space-y-4 bg-white p-6 rounded-xl shadow"
+      class="space-y-4 p-6 rounded-xl shadow"
       x-data="{ preview: '{{ $item ? $item->image_url : '' }}' }">
     @csrf
     @if ($item) @method('PUT') @endif
@@ -12,7 +12,7 @@
         </template>
         <input type="file" name="desain" accept="image/*"
                @change="preview = URL.createObjectURL($event.target.files[0])"
-               class="block w-full text-sm">
+               class="w-full rounded-lg border border-white/10 bg-[#1c1c1e] px-4 py-2 font-inter text-sm text-white file:mr-4 file:rounded file:border-0 file:bg-white/10 file:px-3 file:py-1.5 file:text-white">
         @if ($item) <p class="text-xs text-gray-500 mt-1">Kosongkan jika tidak ingin mengganti gambar.</p> @endif
     </div>
 
@@ -28,7 +28,7 @@
     </div>
 
     <div class="flex gap-3">
-        <button type="submit" class="bg-black text-white px-5 py-2 rounded-lg hover:bg-gray-800">Simpan</button>
-        <a href="{{ route('admin.desain.index') }}" class="px-5 py-2 rounded-lg border">Batal</a>
+        <button type="submit" class="bg-white text-black font-medium px-5 py-2 rounded-lg hover:bg-white/50">Simpan</button>
+        <a href="{{ route('admin.desain.index') }}" class="px-5 py-2 rounded-lg border border-white/70 hover:bg-white/10">Batal</a>
     </div>
 </form>

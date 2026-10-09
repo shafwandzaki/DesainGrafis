@@ -8,9 +8,9 @@
 
 @include('admin.partials.alert')
 
-<div class="bg-white rounded-xl shadow overflow-x-auto">
+<div class="border border-white/5 rounded-xl shadow overflow-x-auto">
     <table class="w-full text-sm text-left">
-        <thead class="bg-gray-100 text-gray-600">
+        <thead class="bg-white/5 text-white">
             <tr>
                 <th class="px-4 py-3">Gambar</th>
                 <th class="px-4 py-3">Nama Karya</th>
@@ -21,8 +21,8 @@
         </thead>
         <tbody>
             @forelse ($karyas as $item)
-                <tr class="border-t">
-                    <td class="px-4 py-3"><img src="{{ $item->image_url }}" class="w-20 h-20 object-cover rounded-lg"></td>
+                <tr>
+                    <td class="px-4 py-3"><img src="{{ asset('storage/' . $item->img_karya) }}" class="w-20 h-20 object-cover rounded-lg"></td>
                     <td class="px-4 py-3 font-medium">{{ $item->nama_karya }}</td>
                     <td class="px-4 py-3 text-gray-600">{{ \Illuminate\Support\Str::limit($item->deskripsi, 80) }}</td>
                     <td class="px-4 py-3">

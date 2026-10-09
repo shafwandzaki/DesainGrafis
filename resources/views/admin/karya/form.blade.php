@@ -1,6 +1,6 @@
 {{-- Variabel: $action, $item (null saat create) --}}
 <form action="{{ $action }}" method="POST" enctype="multipart/form-data"
-      class="space-y-4 bg-white p-6 rounded-xl shadow"
+      class="space-y-4 p-6 rounded-xl shadow"
       x-data="{ preview: '{{ $item ? $item->image_url : '' }}' }">
     @csrf
     @if ($item) @method('PUT') @endif

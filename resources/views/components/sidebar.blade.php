@@ -21,13 +21,13 @@
 
     <!-- Sidebar -->
     <aside :class="sidebarOpen ? 'translate-x-0' : '-translate-x-full'"
-           class="fixed md:static top-0 left-0 z-50 w-64 shrink-0 border-r border-white/5 flex flex-col justify-between h-screen bg-[#101012] text-white transition-transform duration-300 ease-in-out md:translate-x-0">
+           class="fixed md:static top-0 left-0 z-50 w-64 shrink-0 border-r border-white/5 flex flex-col justify-between h-screen bg-black/40 backdrop-blur-2xl text-white transition-transform duration-300 ease-in-out md:translate-x-0">
 
         <div>
             <!-- Logo / Brand -->
             <div class="px-6 py-6 flex items-center gap-2 whitespace-nowrap">
                 <img src="{{asset('icon/logo_desaingrafis.jpg')}}" alt="" class="h-9 w-9 rounded">
-                <span class="font-bold text-lg text-white">Desain Grafis - Admin</span>
+                <span class="font-bold text-sm text-white">Desain - Admin</span>
             </div>
 
             <!-- Navigation Links -->
@@ -43,7 +43,7 @@
                 </a>
 
                 <a href="{{ route('admin.desain.index') }}"
-                   class="block px-4 py-2.5 rounded-lg transition-all duration-200 text-sm {{ Route::currentRouteName() === 'admin.fotografi.index' ? 'bg-[#31333a] text-white font-medium' : 'text-gray-300 hover:bg-white/5 hover:text-white' }}">
+                   class="block px-4 py-2.5 rounded-lg transition-all duration-200 text-sm {{ Route::currentRouteName() === 'admin.desain.index' ? 'bg-[#31333a] text-white font-medium' : 'text-gray-300 hover:bg-white/5 hover:text-white' }}">
                     Desain
                 </a>
 

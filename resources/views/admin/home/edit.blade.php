@@ -46,7 +46,7 @@
                    class="w-full border rounded-lg px-3 py-2" placeholder="https://instagram.com/username">
         </div>
 
-        <button type="submit" class="bg-black text-white px-5 py-2 rounded-lg hover:bg-gray-800">Simpan</button>
+        <button type="submit" class="bg-white text-black font-semibold px-5 py-2 rounded-lg hover:bg-white/50">Simpan</button>
     </form>
 </div>
 @endsection
