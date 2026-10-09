@@ -7,3 +7,21 @@
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
+
+html {
+    scrollbar-width: thin;
+    scrollbar-color: #ffffff #131315;
+}
+
+.custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #ffffff transparent;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+[x-cloak] {
+    display: none !important;
+}

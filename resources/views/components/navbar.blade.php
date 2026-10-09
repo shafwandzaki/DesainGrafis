@@ -12,7 +12,7 @@
     class="sticky top-0 z-50 flex items-center justify-between"
 >
     <a href="#home" class="flex items-center gap-4">
-        <img src="icon/logo_desaingrafis.png" alt="Logo" class="w-8 h-8 rounded-lg">
+        <img src="icon/logo_desaingrafis.jpg" alt="Logo" class="w-8 h-8 rounded-lg">
         <h2 class="text-xl font-bold text-white">Desain Grafis</h2>
     </a>
 

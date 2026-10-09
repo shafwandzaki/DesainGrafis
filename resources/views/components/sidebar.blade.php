@@ -44,7 +44,7 @@
 
                 <a href="{{ route('admin.desain.index') }}"
                    class="block px-4 py-2.5 rounded-lg transition-all duration-200 text-sm {{ Route::currentRouteName() === 'admin.fotografi.index' ? 'bg-[#31333a] text-white font-medium' : 'text-gray-300 hover:bg-white/5 hover:text-white' }}">
-                    Fotografi
+                    Desain
                 </a>
 
                 <a href="{{ route('admin.tools.index') }}"
