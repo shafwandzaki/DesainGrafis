@@ -11,7 +11,7 @@ class ToolsController extends Controller
 {
     public function index()
     {
-        $tools = Tools::orderBy('kategori')->orderByDesc('percent')->paginate(10);
+        $tools = Tools::latest()->paginate(10);
         return view('admin.tools.index', compact('tools'));
     }
 

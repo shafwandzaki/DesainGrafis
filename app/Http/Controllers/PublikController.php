@@ -47,7 +47,7 @@ class PublikController extends Controller
 
     private function tools(): array
     {
-        return Tools::latest()->get()->map(function ($tools) {
+        return Tools::orderBy('kategori')->orderByDesc('percent')->paginate(10)->map(function ($tools) {
             return [
                 'icon_tools' => asset('storage/' . $tools->icon_tools),
                 'nama_tools' => $tools->nama_tools,

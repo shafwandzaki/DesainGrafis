@@ -6,10 +6,11 @@
     <title>Login Admin</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="bg-[#131315] min-h-screen flex items-center justify-center px-4 relative overflow-hidden">
+<body class="min-h-screen flex items-center justify-center px-4 relative overflow-hidden">
+    <x-bg-admin></x-bg-admin>
 
     <div class="w-full max-w-sm">
-        <h1 class="font-syne text-4xl font-bold text-white text-center mb-8">Login Admin</h1>
+        <h1 class="font-inter text-4xl font-bold text-white text-center mb-8">Login Admin</h1>
 
         @if($errors->any())
             <div class="bg-red-500/10 border border-red-500/30 text-red-400 px-4 py-3 rounded-lg mb-6 text-sm">
@@ -24,12 +25,12 @@
 
             <div>
                 {{-- <label class="block text-sm text-gray-400 mb-2">Email</label> --}}
-                <input type="email" name="email" value="{{ old('email') }}" placeholder="Email" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-blue-500">
+                <input type="email" name="email" value="{{ old('email') }}" placeholder="Email" class="w-full bg-white/3 border border-white/10 backdrop-blur-lg rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-blue-500">
             </div>
 
             <div x-data="{ show: false }" class="relative">
                 {{-- <label class="block text-sm text-gray-400 mb-2">Password</label> --}}
-                <input :type="show ? 'text' : 'password'" name="password" placeholder="Password" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-blue-500">
+                <input :type="show ? 'text' : 'password'" name="password" placeholder="Password" class="w-full bg-white/3 border border-white/10 backdrop-blur-lg rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-blue-500">
 
                 <button
                     type="button"
@@ -47,7 +48,7 @@
                 </button>
             </div>
 
-            <button type="submit" class="w-full py-2.5 bg-white hover:bg-[#656565] rounded-lg text-black font-extrabold transition-colors">
+            <button type="submit" class="w-full py-2.5 bg-white/10 hover:bg-white/20 backdrop-blur-lg rounded-lg border border-white/20 text-white font-bold transition-colors">
                 Login
             </button>
         </form>

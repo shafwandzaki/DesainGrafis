@@ -1,9 +1,10 @@
 @extends('layout.admin')
 
 @section('content')
-<div class="max-w-2xl">
     <h1 class="text-2xl font-bold mb-6">Edit Tools</h1>
-    @include('admin.partials.alert')
-    @include('admin.tools.form', ['item' => $tool, 'action' => route('admin.tools.update', $tool)])
-</div>
+    <form method="POST" action="{{ route('admin.tools.update', $tool) }}" enctype="multipart/form-data">
+        @csrf
+        @method('PUT')
+        @include('admin.tools.form')
+    </form>
 @endsection
