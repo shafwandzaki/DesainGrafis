@@ -1,10 +1,10 @@
-<!-- <div 
+<div 
     x-show="selected !== null" 
     x-cloak
     @click.self="selected = null"
-    class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur px-4"
+    class="fixed inset-0 z-50 flex items-center justify-center bg-black/30 backdrop-blur px-4"
 >
-    <div @click.away="selected = null" class="custom-scrollbar bg-[#0A0C18]/30 border border-white/10 backdrop-blur-lg rounded-2xl max-w-2xl w-full max-h-[85vh] overflow-y-auto p-8 relative">
+    <div @click.away="selected = null" class="custom-scrollbar bg-black/30 border border-white/15 backdrop-blur-lg rounded-2xl max-w-2xl w-full max-h-[85vh] overflow-y-auto p-8 relative">
         <button @click="selected = null" class="absolute top-6 right-6 text-white hover:text-blue-500 text-xl">
             ✕
         </button>
@@ -23,4 +23,4 @@
             </div>
         </template>
     </div>
-</div> -->
+</div>
