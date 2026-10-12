@@ -30,14 +30,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const groups = document.querySelectorAll('.reveal-group');
 
     groups.forEach((group) => {
-        const items = group.querySelectorAll('.reveal-item');
+        const items = Array.from(group.querySelectorAll('.reveal-item'));
 
         const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
+            entries
+                .filter((entry) => entry.isIntersecting)
+                // urutkan sesuai posisi di grid supaya munculnya berurutan
+                .sort((a, b) => items.indexOf(a.target) - items.indexOf(b.target))
+                .forEach((entry, i) => {
                     const item = entry.target;
-                    const index = Array.from(items).indexOf(item);
-                    const delay = (index % 6) * 200; // jeda 200ms per card, reset tiap 6 card
+                    const delay = i * 250; // jeda 200ms per card yang muncul bersamaan
 
                     setTimeout(() => {
                         item.classList.add('is-visible');
@@ -51,8 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     }, delay);
 
                     observer.unobserve(item); // biar animasi cuma jalan sekali
-                }
-            });
+                });
         }, { threshold: 0.15 });
 
         items.forEach((item) => observer.observe(item));

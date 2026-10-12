@@ -9,8 +9,8 @@
         aria-hidden="true"
         :class="scrolled
             ? 'bg-white/3 backdrop-blur-lg border-b border-white/5'
-            : 'bg-transparent backdrop-blur-none border-b border-transparent'"
-        class="absolute inset-0 -z-10 transition-colors duration-300"></div>
+            : 'bg-transparent backdrop-blur-none'"
+        class="absolute inset-0 -z-10 border-b border-transparent transition-colors duration-300"></div>
 
     <a href="#home" class="flex items-center gap-4">
         <img src="icon/logo_desaingrafis.jpg" alt="Logo" class="w-8 h-8 rounded-lg">
