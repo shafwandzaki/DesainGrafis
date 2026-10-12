@@ -11,6 +11,7 @@ return new class extends Migration
         Schema::create('desains', function (Blueprint $table) {
             $table->id();
             $table->string('desain');
+            $table->string('desain_original')->nullable();
             $table->string('judul');
             $table->text('deskripsi');
             $table->timestamps();

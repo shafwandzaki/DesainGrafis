@@ -5,7 +5,12 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Models\Desain;
 use Illuminate\Http\Request;
+use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
+use Intervention\Image\Drivers\Gd\Driver as GdDriver;
+use Intervention\Image\Format;
+use Intervention\Image\ImageManager;
 
 class DesainController extends Controller
 {
@@ -28,7 +33,7 @@ class DesainController extends Controller
             'deskripsi' => ['required', 'string'],
         ]);
 
-        $data['desain'] = $request->file('desain')->store('desain', 'public');
+        $data = array_merge($data, $this->simpanGambar($request->file('desain'), $data['judul']));
 
         Desain::create($data);
 
@@ -50,8 +55,8 @@ class DesainController extends Controller
         ]);
 
         if ($request->hasFile('desain')) {
-            Storage::disk('public')->delete($desain->desain);
-            $data['desain'] = $request->file('desain')->store('desain', 'public');
+            $this->hapusGambar($desain);
+            $data = array_merge($data, $this->simpanGambar($request->file('desain'), $data['judul']));
         } else {
             unset($data['desain']);
         }
@@ -64,10 +69,50 @@ class DesainController extends Controller
 
     public function destroy(Desain $desain)
     {
-        Storage::disk('public')->delete($desain->desain);
+        $this->hapusGambar($desain);
         $desain->delete();
 
         return redirect()->route('admin.desain.index')
             ->with('success', 'Desain berhasil dihapus.');
+    }
+
+    /**
+     * Simpan file asli apa adanya + buat versi WebP yang ringan untuk ditampilkan.
+     * Return: ['desain' => path webp, 'desain_original' => path file asli]
+     */
+    private function simpanGambar(UploadedFile $file, string $judul): array
+    {
+        $disk = Storage::disk('public');
+        $nama = Str::slug($judul) . '-' . Str::random(6);
+
+        // 1) File asli (untuk download)
+        $pathAsli = $file->storeAs('desain/original', $nama . '.' . $file->extension(), 'public');
+
+        // 2) Versi WebP (untuk tampil di web)
+        $manager = ImageManager::usingDriver(GdDriver::class);
+
+        $webp = $manager->decodePath($file->getRealPath())
+            ->scaleDown(width: 1600)    // kecilkan jika lebih lebar dari 1600px (tidak memperbesar)
+            ->encodeUsingFormat(Format::WEBP, quality: 80);
+
+        $pathWebp = 'desain/' . $nama . '.webp';
+        $disk->put($pathWebp, (string) $webp);
+
+        return [
+            'desain'          => $pathWebp,
+            'desain_original' => $pathAsli,
+        ];
+    }
+
+    /** Hapus versi WebP dan file asli (data lama mungkin belum punya file asli). */
+    private function hapusGambar(Desain $desain): void
+    {
+        $disk = Storage::disk('public');
+
+        $disk->delete($desain->desain);
+
+        if ($desain->desain_original) {
+            $disk->delete($desain->desain_original);
+        }
     }
 }

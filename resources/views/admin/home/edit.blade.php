@@ -4,7 +4,7 @@
 <div class="max-w-2xl font-inter">
     <h1 class="text-2xl font-bold mb-6">Edit Konten Home</h1>
 
-    <form action="{{ route('admin.home.update') }}" method="POST" class="space-y-4 p-6 rounded-xl shadow">
+    <form action="{{ route('admin.home.update') }}" method="POST" class="space-y-4 rounded-xl shadow">
         @csrf
         @method('PUT')
 

@@ -2,7 +2,7 @@
 
 <div x-data="{ open: false }">
 
-    <div @click="open =true" class="group cursor-pointer rounded-lg rounded-br-4xl sm:rounded-2xl sm:rounded-br-[2.5rem] border border-white/10 bg-white/5 p-2.5 shadow-lg shadow-black/30 backdrop-blur-lg transition duration-300 hover:-translate-y-1 hover:border-white/20 hover:bg-white/10 hover:shadow-purple-500/10">
+    <div @click="open =true" class="reveal-item group cursor-pointer rounded-lg rounded-br-4xl sm:rounded-2xl sm:rounded-br-[2.5rem] border border-white/10 bg-white/5 p-2.5 shadow-lg shadow-black/30 backdrop-blur-lg transition duration-300 hover:-translate-y-1 hover:border-white/20 hover:bg-white/10 hover:shadow-purple-500/10">
 
         {{-- Gambar --}}
         <div class="aspect-4/3 w-full overflow-hidden rounded-lg sm:rounded-xl bg-white/5">

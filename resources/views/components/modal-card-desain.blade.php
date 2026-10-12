@@ -37,6 +37,13 @@
                 @if ($desains['deskripsi'])
                     <p class="mt-3 font-inter text-sm leading-relaxed text-gray-300">{{ $desains['deskripsi'] }}</p>
                 @endif
+
+                {{-- Download versi asli --}}
+                <div class="mt-auto pt-6">
+                    <a href="{{ $desains['download'] }}" download class="block w-full rounded-lg bg-white/10 py-2.5 text-center font-inter text-sm font-medium text-white transition-colors hover:bg-white/20">
+                        Download Desain
+                    </a>
+                </div>
             </div>
         </div>
     </div>

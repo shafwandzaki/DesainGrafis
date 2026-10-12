@@ -39,6 +39,7 @@ class PublikController extends Controller
         return Desain::latest()->get()->map(function ($desain) {
             return [
                 'desain'    => asset('storage/' . $desain->desain),
+                'download'  => asset('storage/' . ($desain->desain_original ?: $desain->desain)),
                 'judul'     => $desain->judul,
                 'deskripsi' => $desain->deskripsi,
             ];
