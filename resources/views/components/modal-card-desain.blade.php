@@ -5,8 +5,6 @@
     <div
         x-show="open"
         x-cloak
-        x-transition.opacity
-        x-effect="document.body.classList.toggle('overflow-hidden', open)"
         @keydown.escape.window="open = false"
         @click.self="open = false"
         role="dialog"

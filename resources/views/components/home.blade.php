@@ -5,18 +5,18 @@
   {{-- Title --}}
   <div class="mb-6 flex items-center gap-3">
     <span class="h-2 w-2 rounded-full bg-white"></span>
-    <p class="text-xs uppercase tracking-[0.2em] text-gray-400 md:text-sm">
+    <p class="font-jetbrains text-xs uppercase tracking-[0.2em] text-gray-400 md:text-sm">
       {{ $home['title'] }}
     </p>
   </div>
 
   {{-- Judul --}}
-  <h1 class="mb-8 max-w-5xl text-3xl font-bold leading-[1.05] tracking-tight lg:text-[5.5rem]">
+  <h1 class="font-syne mb-8 max-w-5xl text-3xl font-bold leading-[1.05] tracking-tight lg:text-[5.5rem]">
     {{ $home['tagline'] }}
   </h1>
 
   {{-- Deskripsi --}}
-  <p class="mb-12 max-w-4xl text-lg leading-relaxed text-gray-300 md:text-xl">
+  <p class="font-inter mb-12 max-w-4xl text-lg leading-relaxed text-gray-300 md:text-xl">
     {{ $home['deskripsi'] }}
   </p>
 

@@ -68,7 +68,7 @@
         .bgx-blob--purple {
             top: -10%; left: -10%;
             width: 500px; height: 500px;
-            background: rgba(147, 51, 234, .20);
+            background: rgba(147, 51, 234, 0.2);
             filter: blur(100px);
         }
 

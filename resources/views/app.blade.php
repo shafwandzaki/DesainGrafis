@@ -7,7 +7,7 @@
     <title>Dzaki | Desain</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="custom-scrollbar text-white">
+<body class="custom-scrollbar bg-[#0B0D17] text-white">
     <x-bg-utama/>
     <x-navbar/>
     <main>
@@ -15,7 +15,7 @@
         <x-desain :desain="$desain"></x-desain>
         <x-tools :tools="$tools"></x-tools>
         <x-karya :karya="$karya"></x-karya>
-    </main>
+    </main> 
     <x-footer></x-footer>
 </body>
 </html>

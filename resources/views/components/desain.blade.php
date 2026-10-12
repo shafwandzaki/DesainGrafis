@@ -7,7 +7,7 @@
         <p class="text-gray-400 text-center mb-16">Berikut ini adalah beberapa desain yang telah saya buat</p>
 
         <!-- Grid Container (4 Kolom) -->
-        <div class="reveal-group grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-2 sm:gap-4 md:gap-6 lg:gap-6">
+        <div class="reveal-group grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-2 sm:gap-4 md:gap-6">
             @foreach ($desain as $desains)
                 <x-card-desain :desains="$desains"/>
             @endforeach
