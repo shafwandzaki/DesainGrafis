@@ -7,8 +7,8 @@
     </div>
     <p class="text-gray-400 text-sm mb-2">{{ $tool['kategori'] }}</p>
     <div class="flex flex-col gap-1">
-        <div class="w-full bg-gray-200 rounded-full h-2">
-            <div data-bar="{{ $tool['percent'] }}" class="bg-blue-500 h-2 rounded-full w-0 transition-[width] duration-1000 ease-out"></div>
+        <div class="w-full bg-white/10 rounded-full h-1.5">
+            <div data-bar="{{ $tool['percent'] }}" class="bg-blue-500 h-full rounded-full w-0 transition-[width] duration-1000 ease-out"></div>
         </div>
         <p data-count="{{ $tool['percent'] }}" class="text-xs text-gray-300 font-medium">0%</p>
     </div>
